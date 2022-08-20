@@ -1,4 +1,5 @@
 export interface IPatient {
+    id?: number,
     pet: string,
     owner: string,
     email: string,
