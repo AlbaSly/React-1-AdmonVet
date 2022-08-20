@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+    transition: all .2s ease;
+}
+
+.showing {
+    animation: left-to-center .5s;
+}
+
+@keyframes left-to-center {
+    0% {
+        opacity: 0;
+        left: -100vw;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
