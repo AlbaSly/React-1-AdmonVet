@@ -25,7 +25,7 @@ const Form = (): JSX.Element => {
         displayAlert();
     }
 
-    function displayAlert() {
+    function displayAlert(): void {
         if (showAlert) return;
 
         setShowAlert(true);
