@@ -13,6 +13,15 @@ const App = (): JSX.Element => {
   const [patientList, setPatientList]: [IPatient[], Dispatch<SetStateAction<IPatient[]>>] = useState(InitialPatientArray);
   const [formEdition, setFormEdition]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(false);
 
+  useEffect((): void => {
+    function loadPatientList(): void {
+      const patientList: IPatient[] = JSON.parse(localStorage.getItem(patientListLocalStorageKey)!) ?? [];
+
+      setPatientList(patientList);
+    } 
+    loadPatientList();
+    setLoaded(true);
+  }, []);
 
   return (
     <div className="container mx-auto">
