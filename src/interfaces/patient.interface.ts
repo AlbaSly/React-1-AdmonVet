@@ -1,5 +1,5 @@
 export interface IPatient {
-    id?: number,
+    id?: string | null,
     pet: string,
     owner: string,
     email: string,
