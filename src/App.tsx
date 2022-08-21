@@ -23,6 +23,17 @@ const App = (): JSX.Element => {
     setLoaded(true);
   }, []);
 
+  useEffect((): void => {
+    function storePatientList(): void {
+      const patientListToStore: IPatient[] = [...patientList];
+
+      localStorage.setItem(patientListLocalStorageKey, JSON.stringify(patientListToStore));
+    }
+    if (loaded) {
+      storePatientList();
+    }
+  }, [patientList]);
+
   return (
     <div className="container mx-auto">
       <Header />
