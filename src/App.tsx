@@ -42,6 +42,10 @@ const App = (): JSX.Element => {
           patientState={{patient, setPatient}} 
           patientListState={{patientList, setPatientList}} 
           formEditionState={{formEdition, setFormEdition}} />
+        <PatientList 
+          patientState={{patient, setPatient}}
+          patientListState={{patientList, setPatientList}}
+          formEditionState={{formEdition, setFormEdition}} />
       </div>
     </div>
   );
