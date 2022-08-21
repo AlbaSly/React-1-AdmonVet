@@ -14,19 +14,32 @@ const Form = (): JSX.Element => {
         patientListState: {patientList, setPatientList},
         formEditionState: {formEdition, setFormEdition}
     } = props;
+
+    const handleSubmit = async (ev: FormEvent<HTMLFormElement>): Promise<void> => {
         ev.preventDefault();
-        
+
         const validationResult: [boolean, string] = PatientFormValidation(patient);
 
         if (!validationResult[0]) {
-            setAlert({error: true, msg: validationResult[1]});
+            setAlertInfo({type: 'error', msg: validationResult[1]});
 
             displayAlert();
             return;
         }
-        setAlert({error: false, msg: 'Paciente agregado correctamente'});
 
+        if (!formEdition) {
+            addPatient();
+
+            setAlertInfo({type: 'success', msg: 'Paciente agregado correctamente'});
+            displayAlert();
+            return;
+        }
+
+        updatePatient();
+
+        setAlertInfo({type: 'success', msg: 'Paciente actualizado correctamente'});
         displayAlert();
+    }
     
     function addPatient(): void {
         const newPatient: IPatient = {
