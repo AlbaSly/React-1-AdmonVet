@@ -42,7 +42,7 @@ const Form = (): JSX.Element => {
             </p>
 
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg py-10 px-5 relative">
-                {showAlert ? <Alert msg={alert.msg} error={alert.error}></Alert> : ''}
+                {showAlert ? <Alert msg={alertInfo.msg} type={alertInfo.type}></Alert> : ''}
                 <div className="mb-2">
                     <label htmlFor="pet" className="block p-2 text-gray-700 uppercase font-bold">Nombre Mascota</label>
                     <input 
