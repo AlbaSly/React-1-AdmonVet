@@ -1,9 +1,9 @@
 export interface IAlert {
-    error: boolean
+    type: string,
     msg: string
 }
 
 export const AlertDefaultValue: IAlert = {
-    error: false,
+    type: 'info',
     msg: ''
 }
