@@ -1,12 +1,15 @@
 import {useState, useEffect, Dispatch, SetStateAction, FormEvent} from 'react';
+//Components
 import Alert from './Alert';
+//Validations
 import { PatientFormValidation } from '../validations/Form.validator';
-import { InitialPatient, IPatient } from '../interfaces/IPatient';
-import { AlertDefaultValue, IAlert } from '../interfaces/IAlert';
+//Interfaces (props, objects, etc)
+import { PropsFormComponent } from '../interfaces/components/components.interface';
+import { InitialPatient, IPatient } from '../interfaces/patient.interface';
+import { AlertDefaultValue, IAlert } from '../interfaces/alert.interface';
 
-const Form = (): JSX.Element => {
-    const [patient, setPatient]: [IPatient, Dispatch<SetStateAction<IPatient>>] = useState(InitialPatient);
-    const [alert, setAlert]: [IAlert, Dispatch<SetStateAction<IAlert>>] = useState(AlertDefaultValue);
+const Form = (props: PropsFormComponent): JSX.Element => {
+    const [alertInfo, setAlertInfo]: [IAlert, Dispatch<SetStateAction<IAlert>>] = useState(AlertDefaultValue);
     const [showAlert, setShowAlert]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(false);
 
     const {
