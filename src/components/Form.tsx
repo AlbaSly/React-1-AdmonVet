@@ -9,7 +9,11 @@ const Form = (): JSX.Element => {
     const [alert, setAlert]: [IAlert, Dispatch<SetStateAction<IAlert>>] = useState(AlertDefaultValue);
     const [showAlert, setShowAlert]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(false);
 
-    const handleSubmit = (ev: FormEvent<HTMLFormElement>): void => {
+    const {
+        patientState: {patient, setPatient}, 
+        patientListState: {patientList, setPatientList},
+        formEditionState: {formEdition, setFormEdition}
+    } = props;
         ev.preventDefault();
         
         const validationResult: [boolean, string] = PatientFormValidation(patient);
