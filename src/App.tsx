@@ -38,8 +38,10 @@ const App = (): JSX.Element => {
     <div className="container mx-auto">
       <Header />
       <div className="mt-10 md:flex">
-        <Form patientState={{patient, setPatient}} patientListState={{patientList, setPatientList}}/>
-        <PatientList patientList={patientList} />
+        <Form 
+          patientState={{patient, setPatient}} 
+          patientListState={{patientList, setPatientList}} 
+          formEditionState={{formEdition, setFormEdition}} />
       </div>
     </div>
   );
