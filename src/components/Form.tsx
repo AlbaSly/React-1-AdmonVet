@@ -75,7 +75,7 @@ const Form = (): JSX.Element => {
                     <input 
                         id="discharge-date" 
                         type="date" 
-                        value={patient.date.toISOString().split('T')[0]}
+                        value={new Date(patient.date).toISOString().split('T')[0]}
                         onChange={ev => setPatient({...patient, date: new Date(ev.target.value)})} 
                         className="block w-full p-2 border-2 border-gray-200 placeholder-purple-400 text-purple-600 rounded-md"/>
                 </div>
