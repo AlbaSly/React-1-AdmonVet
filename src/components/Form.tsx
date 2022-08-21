@@ -41,6 +41,19 @@ const Form = (): JSX.Element => {
         setPatient(InitialPatient);
     }
 
+    function updatePatient(): void {
+        const patientUpdated: IPatient = {
+            ...patient
+        }
+
+        const patientListUpdated: IPatient[] = [...patientList.map((patient: IPatient) => patient.id === patientUpdated.id ? patientUpdated : patient)];
+
+        setPatientList(patientListUpdated);
+
+        setFormEdition(false);
+        setPatient(InitialPatient);
+    }
+
     function generateId(): string {
         const currenTime: string = Date.now().toString(36);
         const randomGen: string = Math.random().toString(36).substring(2);
