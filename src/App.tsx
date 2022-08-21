@@ -5,6 +5,8 @@ import PatientList from "./components/PatientList";
 
 import { InitialPatient, InitialPatientArray, IPatient } from "./interfaces/patient.interface";
 
+const patientListLocalStorageKey = 'admon_vet__patientList';
+
 const App = (): JSX.Element => {
   const [patient, setPatient]: [IPatient, Dispatch<SetStateAction<IPatient>>] = useState(InitialPatient);
   const [patientList, setPatientList]: [IPatient[], Dispatch<SetStateAction<IPatient[]>>] = useState(InitialPatientArray);
