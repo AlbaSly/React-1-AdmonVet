@@ -1,4 +1,4 @@
-import { IPatient } from "../interfaces/IPatient";
+import { IPatient } from "../interfaces/patient.interface";
 
 const REGEX_EMAIL_VALIDATION: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
