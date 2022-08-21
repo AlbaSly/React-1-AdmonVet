@@ -3,17 +3,18 @@ import Form from "./components/Form";
 import Header from "./components/Header";
 import PatientList from "./components/PatientList";
 
-import { InitialPatientArray, IPatient } from "./interfaces/IPatient";
+import { InitialPatient, InitialPatientArray, IPatient } from "./interfaces/patient.interface";
 
 const App = (): JSX.Element => {
+  const [patient, setPatient]: [IPatient, Dispatch<SetStateAction<IPatient>>] = useState(InitialPatient);
   const [patientList, setPatientList]: [IPatient[], Dispatch<SetStateAction<IPatient[]>>] = useState(InitialPatientArray);
 
   return (
     <div className="container mx-auto">
       <Header />
       <div className="mt-10 md:flex">
-        <Form />
-        <PatientList />
+        <Form patientState={{patient, setPatient}} patientListState={{patientList, setPatientList}}/>
+        <PatientList patientList={patientList} />
       </div>
     </div>
   );

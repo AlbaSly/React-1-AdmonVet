@@ -1,4 +1,4 @@
-import { IAlert } from "../interfaces/IAlert";
+import { IAlert } from "../interfaces/alert.interface";
 
 const Alert = (props: IAlert): JSX.Element => {
     return (
