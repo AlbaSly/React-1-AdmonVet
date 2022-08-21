@@ -1,10 +1,12 @@
 import { IAlert } from "../interfaces/alert.interface";
 
 const Alert = (props: IAlert): JSX.Element => {
-    const {msg}: IAlert = props;
+    const {type, msg}: IAlert = props;
+
+    const bgColor: string = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-yellow-500';
 
     return (
-        <div id="alert" className={`showing p-2 ${props.error ? 'bg-red-500 ' : 'bg-green-500'} fixed md:absolute w-full top-0 left-0 shadow-md font-bold text-white text-center`}>
+        <div id="alert" className={`showing p-2 ${bgColor} fixed md:absolute w-full top-0 left-0 shadow-md font-bold text-white text-center`}>
             <p>{msg}</p>
         </div>
     );
