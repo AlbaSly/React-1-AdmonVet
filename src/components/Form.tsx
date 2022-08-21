@@ -91,7 +91,7 @@ const Form = (): JSX.Element => {
 
                 <input 
                     type="submit"
-                    className="p-4 w-full mt-5 text-center bg-purple-500 hover:bg-purple-600 hover:cursor-pointer shadow-md hover:shadow-xl font-black text-white uppercase rounded-md" value="Agregar"/>
+                    className="p-4 w-full mt-5 text-center bg-purple-500 hover:bg-purple-600 hover:cursor-pointer shadow-md hover:shadow-xl font-black text-white uppercase rounded-md" value={!formEdition ? 'Agregar' : 'Guardar'}/>
             </form>
         </section>
     );
