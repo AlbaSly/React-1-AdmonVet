@@ -11,6 +11,8 @@ const App = (): JSX.Element => {
   const [loaded, setLoaded]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(false);
   const [patient, setPatient]: [IPatient, Dispatch<SetStateAction<IPatient>>] = useState(InitialPatient);
   const [patientList, setPatientList]: [IPatient[], Dispatch<SetStateAction<IPatient[]>>] = useState(InitialPatientArray);
+  const [formEdition, setFormEdition]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(false);
+
 
   return (
     <div className="container mx-auto">
