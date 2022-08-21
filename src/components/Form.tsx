@@ -40,6 +40,14 @@ const Form = (): JSX.Element => {
 
         setPatient(InitialPatient);
     }
+
+    function generateId(): string {
+        const currenTime: string = Date.now().toString(36);
+        const randomGen: string = Math.random().toString(36).substring(2);
+    
+        const newId = `${currenTime}${randomGen}`;
+    
+        return newId;
     }
 
     function displayAlert(): void {
