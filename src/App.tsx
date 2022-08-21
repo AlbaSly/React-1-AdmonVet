@@ -8,6 +8,7 @@ import { InitialPatient, InitialPatientArray, IPatient } from "./interfaces/pati
 const patientListLocalStorageKey = 'admon_vet__patientList';
 
 const App = (): JSX.Element => {
+  const [loaded, setLoaded]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(false);
   const [patient, setPatient]: [IPatient, Dispatch<SetStateAction<IPatient>>] = useState(InitialPatient);
   const [patientList, setPatientList]: [IPatient[], Dispatch<SetStateAction<IPatient[]>>] = useState(InitialPatientArray);
 
