@@ -27,6 +27,19 @@ const Form = (): JSX.Element => {
         setAlert({error: false, msg: 'Paciente agregado correctamente'});
 
         displayAlert();
+    
+    function addPatient(): void {
+        const newPatient: IPatient = {
+            ...patient,
+            id: generateId()
+        }
+
+        const patientListUpdated: IPatient[] = [...patientList, newPatient];
+
+        setPatientList(patientListUpdated);
+
+        setPatient(InitialPatient);
+    }
     }
 
     function displayAlert(): void {
