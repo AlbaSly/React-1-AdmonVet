@@ -50,7 +50,7 @@ const Form = (props: PropsFormComponent): JSX.Element => {
             id: generateId()
         }
 
-        const patientListUpdated: IPatient[] = [...patientList, newPatient];
+        const patientListUpdated: IPatient[] = [newPatient, ...patientList];
 
         setPatientList(patientListUpdated);
 
